@@ -1,0 +1,22 @@
+@import './header';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 375px;
+  }
+}
+
+.button {
+  background: transparent;
+  border: none;
+}

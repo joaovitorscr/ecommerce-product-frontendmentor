@@ -1,0 +1,26 @@
+.header__container {
+  padding-top: 24px;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.menu {
+  display: none;
+
+  &--isOpen {
+    display: block;
+  }
+}

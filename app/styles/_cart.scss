@@ -1,0 +1,26 @@
+.cart {
+  display: none;
+
+  &--isOpen {
+    display: block;
+    background-color: #fff;
+    font-size: 12px;
+    border-radius: 12px;
+    position: absolute;
+    width: 90%;
+    margin: 16px;
+    z-index: 1;
+  }
+
+  &__header {
+    border-bottom: solid 1px #ccc;
+    padding: 16px;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+  }
+}

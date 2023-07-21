@@ -1,0 +1,54 @@
+.content {
+  padding-top: 16px;
+
+  &__info {
+    h4 {
+      color: orange;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      color: hsl(220, 13%, 13%);
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: hsl(219, 9%, 45%);
+    }
+  }
+
+  &__price {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 28px;
+        font-weight: 700;
+        margin-right: 16px;
+      }
+    }
+
+    &__discount {
+      background-color: hsl(27, 59%, 87%);
+      color: hsl(26, 94%, 51%);
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    &__oldPrice {
+      color: hsl(220, 14%, 75%);
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+  }
+}

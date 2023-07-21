@@ -1,18 +1,26 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 
+import Menu from './Menu'
+import Cart from './Cart'
+
+import logo from '../../public/images/logo.svg'
 import iconAvatar from '../../public/images/image-avatar.png'
 import iconCart from '../../public/images/icon-cart.svg'
 import iconMenu from '../../public/images/icon-menu.svg'
-import Menu from './Menu'
-import { useState } from 'react'
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [cartIsOpen, setCartIsOpen] = useState(false)
 
   function handleMenu() {
-    setIsOpen(!isOpen)
+    setMenuIsOpen(!menuIsOpen)
+  }
+
+  function handleCart() {
+    setCartIsOpen(!cartIsOpen)
   }
 
   return (
@@ -23,17 +31,20 @@ export default function Header() {
             <button onClick={handleMenu} type="button" className="button">
               <Image src={iconMenu} alt="Menu" />
             </button>
-            <h1 className="title">Sneakers</h1>
+            <h1 className="title">
+              <Image src={logo} alt="Sneakers" />
+            </h1>
           </div>
           <div className="header__container__nav__content">
-            <button type="button" className="button">
+            <button onClick={handleCart} type="button" className="button">
               <Image width={24} height={24} src={iconCart} alt="Cart" />
             </button>
             <Image width={24} height={24} src={iconAvatar} alt="Avatar" />
           </div>
         </nav>
       </header>
-      <Menu isOpen={isOpen} handleMenu={handleMenu} />
+      <Menu isOpen={menuIsOpen} handleMenu={handleMenu} />
+      <Cart isOpen={cartIsOpen} />
     </>
   )
 }

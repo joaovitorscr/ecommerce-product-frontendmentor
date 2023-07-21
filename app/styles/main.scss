@@ -1,6 +1,8 @@
 @import './header';
 @import './menu';
 @import './cart';
+@import './product';
+@import './carousel';
 
 * {
   box-sizing: border-box;
@@ -13,7 +15,7 @@
   max-width: 1440px;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     max-width: 375px;
   }
 }
@@ -21,4 +23,14 @@
 .button {
   background: transparent;
   border: none;
+
+  &--control {
+    height: 36px;
+    width: 36px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

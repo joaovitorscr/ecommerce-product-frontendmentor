@@ -16,18 +16,22 @@ export default function Content({
   productName
 }: Props) {
   return (
-    <div className="content container">
+    <div className="content">
       <div className="content__info">
         <h4>{brand}</h4>
         <h3>{productName}</h3>
         <p>{description}</p>
       </div>
       <div className="content__price">
-        <div>
-          <p>${price}</p>
-          <span className="content__price__discount">{discount}</span>
+        <div className="content__price__container">
+          <div className="content__price__container__currentPriceAndDiscount">
+            <p>${price}</p>
+            <span className="content__price__container__currentPriceAndDiscount__discount">
+              {discount}
+            </span>
+          </div>
+          <p className="content__price__container__oldPrice">${oldPrice}</p>
         </div>
-        <p className="content__price__oldPrice">${oldPrice}</p>
       </div>
     </div>
   )

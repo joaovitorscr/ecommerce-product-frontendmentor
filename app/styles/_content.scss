@@ -1,11 +1,27 @@
 .content {
   padding-top: 16px;
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+      margin-left: 64px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 500px;
+    padding-top: 3vw;
+  }
+
   &__info {
     h4 {
       color: orange;
       letter-spacing: 2px;
       margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
     h3 {
@@ -13,10 +29,16 @@
       font-weight: 700;
       font-size: 28px;
       margin-bottom: 16px;
+
+      @media (min-width: 768px) {
+        font-size: 42px;
+        margin-bottom: 32px;
+      }
     }
 
     p {
       color: hsl(219, 9%, 45%);
+      line-height: 32px;
     }
   }
 
@@ -26,29 +48,40 @@
     justify-content: space-between;
     align-items: center;
 
-    div {
+    &__container {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
+      width: 100%;
 
-      p {
-        font-size: 28px;
-        font-weight: 700;
-        margin-right: 16px;
+      @media (min-width: 768px) {
+        display: block;
       }
-    }
 
-    &__discount {
-      background-color: hsl(27, 59%, 87%);
-      color: hsl(26, 94%, 51%);
-      font-weight: bold;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
+      &__currentPriceAndDiscount {
+        display: flex;
+        align-items: center;
 
-    &__oldPrice {
-      color: hsl(220, 14%, 75%);
-      font-weight: 700;
-      text-decoration: line-through;
+        p {
+          font-size: 28px;
+          font-weight: 700;
+          margin-right: 16px;
+        }
+
+        &__discount {
+          background-color: hsl(27, 59%, 87%);
+          color: hsl(26, 94%, 51%);
+          font-weight: bold;
+          padding: 2px 8px;
+          border-radius: 4px;
+        }
+      }
+
+      &__oldPrice {
+        margin-top: 8px;
+        color: hsl(220, 14%, 75%);
+        font-weight: 700;
+        text-decoration: line-through;
+      }
     }
   }
 }

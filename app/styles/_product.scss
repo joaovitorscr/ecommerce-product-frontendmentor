@@ -1,7 +1,18 @@
 @import './content';
 
 .product {
+  @media (min-width: 768px) {
+    padding-top: 5vw;
+    display: flex;
+  }
+
   &__actions {
+    @media (min-width: 768px) {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-around;
+    }
+
     &__quantity {
       display: flex;
       justify-content: space-around;
@@ -11,6 +22,11 @@
       border-radius: 8px;
       font-weight: 700;
       margin-top: 8px;
+
+      @media (min-width: 768px) {
+        width: 160px;
+        margin-right: 16px;
+      }
 
       button {
         display: flex;
@@ -33,6 +49,10 @@
       margin-top: 8px;
       padding: 16px;
       border-radius: 8px;
+
+      @media (min-width: 768px) {
+        width: 300px;
+      }
 
       div {
         display: flex;

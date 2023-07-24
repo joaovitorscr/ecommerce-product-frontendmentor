@@ -1,0 +1,124 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  &__image {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @media (min-width: 768px) {
+        width: 80%;
+        border-radius: 24px;
+      }
+    }
+
+    &__navigators {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      &__buttons {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+
+        img {
+          width: 40%;
+          height: 40%;
+        }
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &__thumbnails {
+    position: relative;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      width: 80%;
+      margin-top: 8px;
+    }
+
+    &__item {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 24px;
+
+      &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 22px;
+        object-fit: cover;
+
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+
+      &--isActive {
+        background-color: #fff;
+        border: 2px solid orange;
+        z-index: 1;
+        opacity: 2;
+        border-radius: 24px;
+
+        img {
+          opacity: 0.4;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        z-index: 1;
+        opacity: 0;
+      }
+
+      &:hover {
+        border: 2px solid orange;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  cursor: pointer;
+}

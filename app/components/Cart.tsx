@@ -14,3 +14,5 @@ export default function Cart({ isOpen }: Props) {
     </div>
   )
 }
+
+// TO DO: Install redux, configure store, reducers and Cart actions

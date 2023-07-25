@@ -9,6 +9,13 @@ import Content from './Content'
 import iconMinus from '../../public/images/icon-minus.svg'
 import iconPlus from '../../public/images/icon-plus.svg'
 
+export type Product = {
+  id: number
+  name: string
+  price: number
+  quantity: number
+}
+
 export default function Product() {
   const [productQuantity, setProductQuantity] = useState(0)
 

@@ -1,7 +1,11 @@
 'use client'
 
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import Image from 'next/image'
+
+import { open, close } from '../store/reducers/cart'
+import { RootReducer } from '../store'
 
 import Menu from './Menu'
 import Cart from './Cart'
@@ -13,14 +17,19 @@ import iconMenu from '../../public/images/icon-menu.svg'
 
 export default function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const [cartIsOpen, setCartIsOpen] = useState(false)
+  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const dispatch = useDispatch()
 
   function handleMenu() {
     setMenuIsOpen(!menuIsOpen)
   }
 
   function handleCart() {
-    setCartIsOpen(!cartIsOpen)
+    if (isOpen) {
+      dispatch(close())
+    } else {
+      dispatch(open())
+    }
   }
 
   return (
@@ -67,7 +76,7 @@ export default function Header() {
               >
                 <Image width={24} height={24} src={iconCart} alt="Cart" />
               </button>
-              <Cart isOpen={cartIsOpen} />
+              <Cart />
             </div>
             <Image
               className="header__container__nav__content__avatar"

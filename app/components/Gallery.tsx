@@ -6,21 +6,13 @@ import Image from 'next/image'
 import iconNext from '../../public/images/icon-next.svg'
 import iconPrevious from '../../public/images/icon-previous.svg'
 
-export default function Gallery() {
-  const [currentImage, setCurrentImage] = useState(0)
-  const product = [
-    '/images/image-product-1.jpg',
-    '/images/image-product-2.jpg',
-    '/images/image-product-3.jpg',
-    '/images/image-product-4.jpg'
-  ]
+type Props = {
+  productImages: string[]
+  productThumbnails: string[]
+}
 
-  const productThumbnails = [
-    '/images/image-product-1-thumbnail.jpg',
-    '/images/image-product-2-thumbnail.jpg',
-    '/images/image-product-3-thumbnail.jpg',
-    '/images/image-product-4-thumbnail.jpg'
-  ]
+export default function Gallery({ productImages, productThumbnails }: Props) {
+  const [currentImage, setCurrentImage] = useState(0)
 
   function handleImageNext() {
     setCurrentImage(currentImage === 3 ? 0 : currentImage + 1)
@@ -36,7 +28,7 @@ export default function Gallery() {
         <Image
           width={400}
           height={350}
-          src={product[currentImage]}
+          src={productImages[currentImage]}
           alt="Product Image"
         />
         <div className="gallery__image__navigators">
@@ -64,6 +56,7 @@ export default function Gallery() {
       <div className="gallery__thumbnails">
         {productThumbnails.map((item, index) => (
           <div
+            key={index}
             className={
               currentImage === index
                 ? 'gallery__thumbnails__item--isActive'

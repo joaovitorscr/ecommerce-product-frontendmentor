@@ -1,9 +1,10 @@
-import { Provider } from 'react-redux'
+'use client'
 
-import { store } from './store'
+import { Provider } from 'react-redux'
 
 import Header from './components/Header'
 import Product from './components/Product'
+import { store } from './store'
 
 export default function Home() {
   return (
@@ -13,3 +14,5 @@ export default function Home() {
     </Provider>
   )
 }
+
+// TO DO: Configure colors, set hover effects and fix lower resolutions devices layout.

@@ -1,5 +1,9 @@
 @import './content';
 
+.cartOpen {
+  cursor: pointer;
+}
+
 .product {
   @media (min-width: 768px) {
     padding-top: 5vw;
@@ -33,6 +37,7 @@
         align-items: center;
         background-color: transparent;
         border: none;
+        cursor: pointer;
       }
     }
 
@@ -49,6 +54,7 @@
       margin-top: 8px;
       padding: 16px;
       border-radius: 8px;
+      cursor: pointer;
 
       @media (min-width: 768px) {
         width: 300px;

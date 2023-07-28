@@ -14,5 +14,3 @@ export default function Home() {
     </Provider>
   )
 }
-
-// TO DO: Configure colors, set hover effects and fix lower resolutions devices layout.

@@ -1,3 +1,4 @@
+@import './colors';
 @import './header';
 @import './menu';
 @import './cart';
@@ -27,14 +28,10 @@
   &--control {
     height: 36px;
     width: 36px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-}
-
-.appClass {
-  cursor: pointer;
 }

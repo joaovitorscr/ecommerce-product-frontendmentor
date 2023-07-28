@@ -17,7 +17,7 @@ import iconMenu from '../../public/images/icon-menu.svg'
 
 export default function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
 
   function handleMenu() {
@@ -74,14 +74,21 @@ export default function Header() {
                 type="button"
                 className="header__container__nav__content__cart__button button"
               >
-                <Image width={24} height={24} src={iconCart} alt="Cart" />
+                <Image src={iconCart} alt="Cart" />
+                <div
+                  className={
+                    items.map((item) => item.quantity).length > 0
+                      ? 'quantityIcon--isActive'
+                      : 'quantityIcon'
+                  }
+                >
+                  {items.map((item) => item.quantity)}
+                </div>
               </button>
               <Cart />
             </div>
             <Image
               className="header__container__nav__content__avatar"
-              width={24}
-              height={24}
               src={iconAvatar}
               alt="Avatar"
             />
